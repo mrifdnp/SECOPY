@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /customer/
+Disallow: /cart
+Disallow: /checkout/
+Disallow: /wishlist
+Disallow: /api/
+Disallow: /login*
+Disallow: /login-customer
+Disallow: /register*
+Disallow: /register-customer
+Disallow: /admin/
+
+Sitemap: https://seco.id/sitemap.xml

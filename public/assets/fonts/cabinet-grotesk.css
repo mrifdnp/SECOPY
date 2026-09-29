@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Cabinet Grotesk'), url('./cabinet/CabinetGrotesk-Regular.otf') format('woff');
+}
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Cabinet Grotesk'), url('./cabinet/CabinetGrotesk-Thin.otf') format('woff');
+}
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 200;
+    src: local('Cabinet Grotesk'), url('./cabinet/CabinetGrotesk-Extralight.otf') format('woff');
+}
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Cabinet Grotesk'), url('./cabinet/CabinetGrotesk-Light.otf') format('woff');
+}
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Cabinet Grotesk'), url('./cabinet/CabinetGrotesk-Medium.otf') format('woff');
+}
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Cabinet Grotesk'), url('./cabinet/CabinetGrotesk-Bold.otf') format('woff');
+}
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Cabinet Grotesk'), url('./cabinet/CabinetGrotesk-Extrabold.otf') format('woff');
+}
+@font-face {
+    font-family: 'Cabinet Grotesk';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Cabinet Grotesk'), url('./cabinet/CabinetGrotesk-Black.otf') format('woff');
+}
+
+

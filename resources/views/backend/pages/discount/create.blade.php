@@ -1,0 +1,116 @@
+@extends('layouts.master')
+@section('title') Add {{ $titleHeader->name }} @endsection
+@section('content')
+@component('components.breadcrumb')
+@slot('li_1') Systems @endslot
+@slot('title') Add {{ $titleHeader->name }} @endslot
+@endcomponent
+
+
+<div class="row">
+    <div class="col-lg-12">                
+        <div class="card">            
+            <div class="card-body">
+                @include('backend.includes.flash')
+                <form id="dt_form" action="{{route('discount.store')}}" class="form-horizontal" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="box">
+                        <!-- /.box-header -->
+                        <div class="box-body indoit-form">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif                                                          
+                            <div class="form-group mb-3">
+<label class="col-sm-12 control-label">Name</label>
+<div class="col-sm-12"><input value="{{ old('name') }}" type="text" class="form-control" name="name" id="name" placeholder="" size="50" >
+</div>
+</div>
+<div class="form-group mb-3">
+<label class="col-sm-12 control-label">Type</label>
+<div class="col-sm-12"><select class="form-control js-example-basic-single select2-type" name="type" required>
+<option value="percent">Percent</option>
+<option value="nominal">Nominal</option>
+</select>
+</div>
+</div>
+<div class="form-group mb-3">
+<label class="col-sm-12 control-label">Start date</label>
+<div class="col-sm-12"><div class="input-group date col-lg-10 col-md-10 col-sm-10 col-xs-10"><div class="input-group-addon"><i class="ri-calendar-2-fill"></i></div><input type="text" class="form-control pull-left" id="datepicker-start_date" name="start_date" value="{{ $dateNow }}" ></div>
+</div>
+</div>
+<div class="form-group mb-3">
+<label class="col-sm-12 control-label">End date</label>
+<div class="col-sm-12"><div class="input-group date col-lg-10 col-md-10 col-sm-10 col-xs-10"><div class="input-group-addon"><i class="ri-calendar-2-fill"></i></div><input type="text" class="form-control pull-left" id="datepicker-end_date" name="end_date" value="{{ $dateNow }}" ></div>
+</div>
+</div>
+<div class="form-group mb-3">
+<label class="col-sm-12 control-label">Value</label>
+<div class="col-sm-12"><input value="{{ old('value') }}" type="text" class="form-control" name="value" id="value" placeholder="" size="50" >
+</div>
+</div>
+
+                            <br>                                                                                                                                                                                 
+                        </div>
+                        <span class="indoit-box-helper"></span>		
+                        <div class="indoit-box-action">
+                            <div class="col-sm-offset-2">
+                                <div class="indoit-box-action-btn"> 
+                                    <a href="{{route('discount.index')}}" class="btn btn-soft-secondary">Back to List</a>                                                                       
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </div><!-- /.box-footer -->	                                
+                        <div class="indoit-box-required">
+                            <hr>
+                            <span class="required">*</span>
+                            Field Required
+                        </div><!-- /.box-footer -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--end col-->
+</div>
+<!--end row-->
+
+
+@endsection
+
+
+@section('css')
+<link href="{{ URL::asset('build/libs/velzon-dependencies/select2-bootstrap-theme-0.1.0-beta.10/select2-bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ URL::asset('build/libs/velzon-dependencies/select2-4.1.0-rc.0/select2.min.css') }}" rel="stylesheet" type="text/css" />
+@endsection
+
+@section('script')
+
+
+<script src="{{ URL::asset('build/libs/jquery/jquery-3.6.0.min.js')}}"></script>
+<script src="{{ URL::asset('build/libs/velzon-dependencies/select2-4.1.0-rc.0/select2.min.js')}}"></script>
+<script src="{{ URL::asset('build/libs/velzon-dependencies/jquery-mask-1.14.10/jquery.mask.js')}}"></script>
+<script src="{{ URL::asset('build/libs/velzon-dependencies/ckeditor5-classic-40.2.0/ckeditor.js') }}"></script>
+
+
+<script>
+    $(".select2-type").select2();
+$(function () {
+                        $('#datepicker-start_date').datepicker({
+                            autoclose: true
+                        })
+                    });
+$(function () {
+                        $('#datepicker-end_date').datepicker({
+                            autoclose: true
+                        })
+                    });
+
+    
+</script>
+@endsection
